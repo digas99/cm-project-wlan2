@@ -14,14 +14,15 @@ configure terminal
 
   ! 0 is for 2.4GHz
   interface Dot11Radio 0
-    encryption vlan 2 mode ciphers aes-ccm tkip
     channel 13
     channel width 20
-    rts threshold 1000
-    rts retries 128
-    packet retries 128
+    
     ssid CMProject
     mbssid
+
+    rts threshold 200
+    fragment-threshold 500
+    
     no shutdown
   exit
 
