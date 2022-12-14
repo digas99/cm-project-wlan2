@@ -17,6 +17,8 @@ configure terminal
     channel 13
     channel width 20
     
+    bridge-group 1
+
     ssid CMProject
     mbssid
 
