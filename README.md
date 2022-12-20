@@ -16,8 +16,8 @@ To avoid collisions and preform a congestion control in the network traffic, RTS
 We will use a [WiFi Jammer](https://github.com/DanMcInerney/wifijammer) to flood the network and increase the probability of packet collisions. Then, we will vary the value of the RTS threshold to observe the handshaking mechanism in action, which should reduce the number of dropped packets.
 
 ### Setup
-![rts_cts.drawio.png](diagrams/rts_cts_frag.drawio.png#gh-light-mode-only)
-![rts_cts.drawio-white.png](diagrams/rts_cts_frag-white.drawio.png#gh-dark-mode-only)
+![rts_cts.drawio.png](diagrams/rts_cts-dark.png#gh-light-mode-only)
+![rts_cts.drawio-white.png](diagrams/rts_cts-white.png#gh-dark-mode-only)
 
 To perform this experimentation, we will create a network using an Access Point. We will have two PCs connected, one working as a Server and another as a Client. A third PC will serve as a Monitor, listening to all the communications between the former.
 
