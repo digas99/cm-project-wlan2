@@ -9,7 +9,17 @@ configure terminal
 
   ! 1 is for 5GHz
   interface Dot11Radio 1
-    shutdown
+    channel 36
+    channel width 20
+
+    bridge-group 2
+
+    ssid CMProject-5G
+    mbssid
+
+    rts threshold 200
+    
+    no shutdown
   exit
 
   ! 0 is for 2.4GHz
@@ -23,7 +33,6 @@ configure terminal
     mbssid
 
     rts threshold 200
-    fragment-threshold 500
     
     no shutdown
   exit
@@ -34,10 +43,22 @@ configure terminal
     mbssid guest-mode
   exit
 
+  dot11 ssid CMProject-5G
+    authentication open
+    vlan 2
+    mbssid guest-mode
+  exit
+
   ! wifi interface that uses bvi 1
   interface Dot11Radio 0.1
     encapsulation dot1q 1
     bridge-group 1
+  exit
+
+  ! wifi interface that uses bvi 2
+  interface Dot11Radio 1.1
+    encapsulation dot1q 2
+    bridge-group 2
   exit
 
   ! fastethernet interface that uses bvi 1
@@ -46,6 +67,12 @@ configure terminal
     bridge-group 1
   exit
 
+  ! fastethernet interface that uses bvi 2
+  interface GigabitEthernet 1.1
+    encapsulation dot1q 2
+    bridge-group 2
+  exit
+  
   ! bvi = bridge virtual interface
   ! this interface is used to bridge wireless devices
   interface bvi 1
@@ -53,12 +80,25 @@ configure terminal
     no shutdown
   exit
 
+  interface bvi 2
+    ip address 10.0.1.100 255.255.255.0
+    no shutdown
+  exit
+
   ! setup dhcp
   service dhcp
+
   ip dhcp excluded-address 10.0.0.100 10.0.0.254
-  ip dhcp pool wlan1
-  network 10.0.0.0 255.255.255.0
-  default-router 10.0.0.100
+  ip dhcp pool cmproject24
+    network 10.0.0.0 255.255.255.0
+    default-router 10.0.0.100
+  exit
+
+  ip dhcp excluded-address 10.0.1.100 10.0.1.254
+  ip dhcp pool cmproject5
+    network 10.0.1.0 255.255.255.0
+    default-router 10.0.1.100
+  exit
 
 end
 
