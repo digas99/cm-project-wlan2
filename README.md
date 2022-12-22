@@ -28,7 +28,13 @@ The WiFi Jammer will be running on the Monitor PC.
 
 ## 802.11 perfomance
 
-A network connection may behave differently depending on a number of factors. A way of measuring this connection is by looking at the strength of its signal, and the rate of data transferred through such connection, the bandwidth. These two properties will be affected by several physical factors, such as the distance between the communicating entities, the obstacles between them and the way the Wi-Fi waves are propelled.
+A network connection may behave differently depending on a number of factors. A way of measuring this connection is by looking at the strength of its signal, and the rate of data transferred through such connection, the bandwidth. These two properties will be affected by several physical factors, such as the distance between the communicating entities and the obstacles between them. Having this in mind, 4 scenarios will be considered:
+
+-  Device as close to the router as possible (< 1m)
+-  Device within sight of the router (+/- 5m)
+-  Device on another room, with a wall as an obstacle (+/- 30m)
+-  Device on another end of the house, several walls as obstacles (+/- 60m)
+-  Device on a different floor (+/- 150m)
 
 ### Approach
 
