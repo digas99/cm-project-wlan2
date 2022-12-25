@@ -1,0 +1,75 @@
+
+!-----------------------------------------------------
+! Cisco Aironet AIR-CAP3602I Setup Script
+!-----------------------------------------------------
+
+enable
+
+configure terminal
+
+  ! physical interface for wifi - 1 is for 5GHz
+  interface Dot11Radio 1
+    channel 36
+
+    ssid CMProject-5G
+    mbssid
+
+    rts threshold 200
+    
+    no shutdown
+  exit
+
+  ! physical interface for wifi - 0 is for 2.4GHz
+  interface Dot11Radio 0
+    channel 13
+
+    ssid CMProject
+    mbssid
+
+    rts threshold 200
+    
+    no shutdown
+  exit
+
+  dot11 ssid CMProject
+    authentication open
+    vlan 1
+    mbssid guest-mode
+  exit
+
+  dot11 ssid CMProject-5G
+    authentication open
+    vlan 1
+    mbssid guest-mode
+  exit
+
+  ! virtual wifi interface in vlan 1 for 2.4GHz
+  interface Dot11Radio 0.1
+    encapsulation dot1q 1
+    bridge-group 1
+  exit
+
+  ! virtual wifi interface in vlan 1 for 5GHz
+  interface Dot11Radio 1.1
+    encapsulation dot1q 1
+    bridge-group 1
+  exit
+
+  ! ethernet interface to allow for internet connection for vlan 1
+  interface GigabitEthernet 0.1
+    encapsulation dot1q 1
+    bridge-group 1
+  exit
+
+  ! bvi = bridge virtual interface
+  ! this interface is used to bridge wireless devices
+  interface bvi 1
+    ip address 192.168.1.100 255.255.255.0
+    no shutdown
+  exit
+  
+end
+
+write
+
+disable

@@ -1,0 +1,76 @@
+Distância entre os APs
+AP 0                     AP 1
+  <-------9 metros-------> 
+
+=========================
+
+AP 1:
+Interface: Dot11Radio 0
+SSID: CMProject
+BSSID: 18:33:9d:c7:b0:b0
+
+Interface: Dot11Radio 1
+SSID: CMProject-5G
+BSSID: 18:33:9d:c3:b1:10
+
+==========================
+
+AP 2:
+Interface: Dot11Radio 0
+SSID: CMProject
+BSSID: 18:33:9d:71:ca:b0
+
+Interface: Dot11Radio 1
+SSID: CMProject-5G
+BSSID: 18:33:9d:73:ca:b0
+
+==========================
+
+Teste 1 (3 portas de madeira abertas)
+Conexão inicial: AP 1
+Conexão final: AP 2
+SSID: CMProject-5G
+
+[antes da troca]
+Intensidade do sinal AP 1: -51dBm
+Intensidade do sinal AP 2: -79dBm
+
+Troca de Conexão: 7m/9m (do AP 1)
+
+[aquando a troca]
+Intensidade do sinal AP 1: -70dBm
+Intensidade do sinal AP 2: -65dBm
+
+==========================
+
+Teste 2 (3 portas de madeira abertas)
+Conexão inicial: AP 1
+Conexão final: AP 2
+SSID: CMProject
+
+[antes da troca]
+Intensidade do sinal AP 1: -48dBm
+Intensidade do sinal AP 2: -87dBm
+
+Troca de Conexão: 11m/9m (do AP 1)
+
+[aquando a troca]
+Intensidade do sinal AP 1: -80dBm
+Intensidade do sinal AP 2: -51dBm
+
+==========================
+
+Teste 3 ( portas de madeira abertas)
+Conexão inicial: AP 1
+Conexão final: AP 2
+SSID: CMProject-5G
+
+[antes da troca]
+Intensidade do sinal AP 1:
+Intensidade do sinal AP 2:
+
+Troca de Conexão: m/9m (do AP 1)
+
+[aquando a troca]
+Intensidade do sinal AP 1:
+Intensidade do sinal AP 2:
