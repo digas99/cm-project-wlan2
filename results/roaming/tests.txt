@@ -26,7 +26,7 @@ BSSID: 18:33:9d:73:ca:b0
 
 ==========================
 
-Teste 1 (3 portas de madeira abertas)
+Teste 1
 Conexão inicial: AP 1
 Conexão final: AP 2
 SSID: CMProject-5G
@@ -43,7 +43,7 @@ Intensidade do sinal AP 2: -65dBm
 
 ==========================
 
-Teste 2 (3 portas de madeira abertas)
+Teste 2
 Conexão inicial: AP 1
 Conexão final: AP 2
 SSID: CMProject
@@ -60,17 +60,4 @@ Intensidade do sinal AP 2: -51dBm
 
 ==========================
 
-Teste 3 ( portas de madeira abertas)
-Conexão inicial: AP 1
-Conexão final: AP 2
-SSID: CMProject-5G
-
-[antes da troca]
-Intensidade do sinal AP 1:
-Intensidade do sinal AP 2:
-
-Troca de Conexão: m/9m (do AP 1)
-
-[aquando a troca]
-Intensidade do sinal AP 1:
-Intensidade do sinal AP 2:
+Fechadas 2 portas de madeira entre os APs não alterou a distância de troca de conexão.

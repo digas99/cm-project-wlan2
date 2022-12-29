@@ -2,60 +2,57 @@
 Project for Comunicações Móveis - DETI UA
 
 ## Table of Contents
-1. [Access Point Configurations](cisco_ap-conf.ios)
-1. [RTS/CTS](#rtscts)
-1. [802.11 perfomance (Signal Strenght and Bandwidth)](#80211-perfomance)
-1. [Roaming between APs](#roaming-between-aps)
+1. [About](#about)
+1. [Cisco Access Point](#cisco-access-point)
+    1. [Open Console](#open-console)
+1. [Authors](#authors)
 
-## RTS/CTS
+## About
 
-To avoid collisions and preform a congestion control in the network traffic, RTS and CTS are used. These are control frames that request and confirm the possibility to send packets. A threshold can be set to specify the packet size from which the handshake should be done. Depending on that size and the network conditions, the handshake might not be necessary (small packets have less probability to collide).
+In this project we will test and verify functional and performance characteristics of WLAN (Wireless LAN).
 
-### Approach
+For this, we chose to approach the following topics:
+- 802.11 coverage and performance
+- Roaming between APs
 
-We will use a [WiFi Jammer](https://github.com/DanMcInerney/wifijammer) to flood the network and increase the probability of packet collisions. Then, we will vary the value of the RTS threshold to observe the handshaking mechanism in action, which should reduce the number of dropped packets.
+For each topic, we give a brief introduction, explain our approach, how we setup the testing environment, show the configuration used in the AP(s) and show the results with images and charts.
 
-### Setup
+You can find everything in the [project report](report.pdf).
 
-To perform this experimentation, we will create a network using an Access Point. We will have two PCs connected, one working as a Server and another as a Client. A third PC will serve as a Monitor, listening to all the communications between the former.
+## Cisco Access Point
 
-The WiFi Jammer will be running on the Monitor PC.  
+**Model:** AIR-CAP3602I-E-K9
+<p float="left">
+  <img src="cisco-air-cap3602i-e-k9-802-11n-cap-w-cleanair-4x4-3ss-10106278-LpjS.jpg" width="300" />
+  <img src="cisco-air-cap3602i-e-k9-802-11n-cap-w-cleanair-4x4-3ss-10106278-AHqr.jpg" width="300" />
+</p>
 
-![rts_cts.png](diagrams/rts_cts-dark.png#gh-light-mode-only)
-![rts_cts-white.png](diagrams/rts_cts-white.png#gh-dark-mode-only)
+The images above were taken from the [tonitrus.com]("https://www.tonitrus.com/es/redes/cisco/access-point-controller/cisco-3600-access-point/10106278-003-cisco-air-cap3602i-e-k9-802.11n-cap-w/cleanair-4x4-3ss-mod-int-ant-e-reg-domain/") website.
 
-### Result
+For this project, we were provided two Cisco Access Points by the professors of the subject.
 
-## 802.11 perfomance
+### Open Console
 
-A network connection may behave differently depending on a number of factors. A way of measuring this connection is by looking at the strength of its signal, and the rate of data transferred through such connection, the bandwidth. These two properties will be affected by several physical factors, such as the distance between the communicating entities and the obstacles between them. Having this in mind, 4 scenarios will be considered:
+To access the AP's console and make modifications to the configuration, we need a Console Cable (ethernet male to usb male). Upon connecting the AP to the computer, we need to identify the physical port it is connected to, and pass it to PuTTY through a Serial connection type. To identify to which port the AP is connected, we can use the Device Manager in Windows.
 
--  Device as close to the router as possible (< 1m)
--  Device within sight of the router (+/- 5m)
--  Device on another room, with a wall as an obstacle (+/- 30m)
--  Device on another end of the house, several walls as obstacles (+/- 60m)
--  Device on a different floor (+/- 150m)
+In Linux, we can check the lastly connected port using *dmesg*, through the command:
+```
+$ dmesg | grep USB
+```
 
-### Approach
+<p float="left">
+  <img src="console/open-console-1.png" width="300" />
+  <img src="console/open-console-2.png" width="300" />
+</p>
 
-To evaluate the performance of the IEEE 802.11 (aka Wi-Fi), we will take into consideration the 2 properties under the 4 scenarios mentioned above, for the two most used frequencies bands, 2.4GHz and 5GHz.
+In PuTTY, upon clicking Open, a terminal should open. To enter configuration mode, we must use the command **enable** and type the password, which is "Cisco" by default.
 
-To measure the Signal Strength, we will use the mobile application %Mobile APP Name%, which etc...
+<img src="console/open-console-3.png" width="600" />
 
-To measure the Bandwidth, we will use iPerf, which is a tool that allows the setup of a server, and have clients send data to it. This app provides us with how much data was sent each second, for a set number of seconds.
+## Authors
 
-### Setup
-To preform this experiment, we will create two VLANs, one for the traffic in the 2.4GHz frequency band, and the other one for the 5GHz. These VLANs will be created in the Access Point, which is directly connected through an Ethernet Cable to the ISP's Router to open the VLANs to the Internet.
-
-We will have 3 devices (2 PCs and 1 Mobile Phone) connecting to the networks through two different SSIDs (one for each VLAN), in order to make the performance tests taking into consideration the two 802.11 frequencies. One of the PCs will act as the Server, and the other devices will be the Clients.
-
-![performance.png](diagrams/performance-dark.png#gh-light-mode-only)
-![performance-white.png](diagrams/performance-white.png#gh-dark-mode-only)
-
-### Results
-
-## Roaming between APs
-
-### Approach
-
-### Setup
+|NMec | Name | Email|
+|-----|------|------|
+|88755 | Carlos Rafael de Jesus Palma Costa | carlospalmacosta@ua.pt|
+|88930 | João Tomás Borges Simões | jtsimoes@ua.pt|
+|90327 | Diogo Costa Correia | diogo.correia99@ua.pt|
