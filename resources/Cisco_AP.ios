@@ -1,0 +1,76 @@
+
+!-----------------------------------------------------
+! Cisco Aironet AIR-CAP3602I Setup Script
+!-----------------------------------------------------
+
+enable
+
+configure terminal
+
+  interface dot11radio 1
+    shutdown
+  exit
+
+  interface dot11radio 0
+    encryption vlan 2 mode ciphers aes-ccm tkip
+    channel 13
+    channel width 20
+    rts threshold 1000
+    rts retries 128
+    packet retries 128
+    ssid LABCOM
+    ssid LABCOM_SEC
+    mbssid
+    no shutdown
+  exit
+
+  dot11 ssid LABCOM
+    authentication open
+    vlan 1
+    mbssid guest-mode
+  exit
+
+  dot11 ssid LABCOM_SEC
+    authentication open
+    authentication key-management wpa version 2
+    wpa-psk ascii labcomlabcom
+    vlan 2
+    mbssid guest-mode
+  exit
+
+  interface dot11radio 0.1
+    encapsulation dot1q 1
+    bridge-group 1
+  exit
+
+    interface dot11radio 0.2
+    encapsulation dot1q 2
+    bridge-group 2
+  exit
+
+  interface GigabitEthernet 0.1
+    encapsulation dot1q 1
+    bridge-group 1
+  exit
+
+  interface GigabitEthernet 0.2
+    encapsulation dot1q 2
+    bridge-group 2
+  exit
+
+  interface bvi1
+    ip address 10.0.0.100 255.255.255.0
+    no shutdown
+  exit
+
+  interface bvi2
+    ip address 10.0.1.100 255.255.255.0
+    no shutdown
+  exit
+
+end
+
+write
+
+disable
+

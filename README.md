@@ -23,8 +23,8 @@ You can find everything in the [project report](report.pdf).
 
 **Model:** AIR-CAP3602I-E-K9
 <p float="left">
-  <img src="cisco-air-cap3602i-e-k9-802-11n-cap-w-cleanair-4x4-3ss-10106278-LpjS.jpg" width="300" />
-  <img src="cisco-air-cap3602i-e-k9-802-11n-cap-w-cleanair-4x4-3ss-10106278-AHqr.jpg" width="300" />
+  <img src="resources/cisco-air-cap3602i-e-k9-802-11n-cap-w-cleanair-4x4-3ss-10106278-LpjS.jpg" width="300" />
+  <img src="resources/cisco-air-cap3602i-e-k9-802-11n-cap-w-cleanair-4x4-3ss-10106278-AHqr.jpg" width="300" />
 </p>
 
 The images above were taken from the [tonitrus.com]("https://www.tonitrus.com/es/redes/cisco/access-point-controller/cisco-3600-access-point/10106278-003-cisco-air-cap3602i-e-k9-802.11n-cap-w/cleanair-4x4-3ss-mod-int-ant-e-reg-domain/") website.
