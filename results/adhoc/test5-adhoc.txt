@@ -1,0 +1,29 @@
+Connecting to host 192.168.137.1, port 5201
+[  5] local 192.168.137.160 port 58488 connected to 192.168.137.1 port 5201
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-1.00   sec  4.00 MBytes  33.6 Mbits/sec                  
+[  5]   1.00-2.01   sec  4.12 MBytes  34.4 Mbits/sec                  
+[  5]   2.01-3.01   sec  4.25 MBytes  35.7 Mbits/sec                  
+[  5]   3.01-4.01   sec   768 KBytes  6.24 Mbits/sec                  
+[  5]   4.01-5.01   sec  0.00 Bytes  0.00 bits/sec                  
+[  5]   5.01-6.01   sec  0.00 Bytes  0.00 bits/sec                  
+[  5]   6.01-7.01   sec  0.00 Bytes  0.00 bits/sec                  
+[  5]   7.01-8.01   sec   640 KBytes  5.27 Mbits/sec                  
+[  5]   8.01-9.00   sec  2.88 MBytes  24.3 Mbits/sec                  
+[  5]   9.00-10.00  sec  3.62 MBytes  30.3 Mbits/sec                  
+[  5]  10.00-11.02  sec  3.25 MBytes  26.9 Mbits/sec                  
+[  5]  11.02-12.00  sec  3.75 MBytes  31.8 Mbits/sec                  
+[  5]  12.00-13.00  sec  3.50 MBytes  29.3 Mbits/sec                  
+[  5]  13.00-14.01  sec  3.88 MBytes  32.3 Mbits/sec                  
+[  5]  14.01-15.00  sec  3.88 MBytes  32.7 Mbits/sec                  
+[  5]  15.00-16.00  sec  4.50 MBytes  37.9 Mbits/sec                  
+[  5]  16.00-17.00  sec  3.25 MBytes  27.2 Mbits/sec                  
+[  5]  17.00-18.00  sec  2.88 MBytes  24.1 Mbits/sec                  
+[  5]  18.00-19.01  sec  4.12 MBytes  34.5 Mbits/sec                  
+[  5]  19.01-20.01  sec  4.38 MBytes  36.6 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-20.01  sec  57.6 MBytes  24.2 Mbits/sec                  sender
+[  5]   0.00-20.01  sec  57.6 MBytes  24.2 Mbits/sec                  receiver
+
+iperf Done.
