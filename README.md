@@ -14,6 +14,8 @@ In this project we will test and verify functional and performance characteristi
 For this, we chose to approach the following topics:
 - 802.11 coverage and performance
 - Roaming between APs
+- Ad-hoc Network
+- Control Frames (not accomplished)
 
 For each topic, we give a brief introduction, explain our approach, how we setup the testing environment, show the configuration used in the AP(s) and show the results with images and charts.
 
